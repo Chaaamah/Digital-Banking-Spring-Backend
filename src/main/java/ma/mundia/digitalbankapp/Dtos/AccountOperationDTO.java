@@ -1,26 +1,21 @@
-package ma.mundia.digitalbankapp.Entities;
+package ma.mundia.digitalbankapp.Dtos;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ma.mundia.digitalbankapp.Entities.BankAccount;
 import ma.mundia.digitalbankapp.Enums.OperationType;
 
 import java.util.Date;
 
-@Entity
-@Data @NoArgsConstructor @AllArgsConstructor
-public class AccountOperation {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class AccountOperationDTO {
     private Long id;
     private Date operationDate;
     private double amount;
 
-    @Enumerated(EnumType.STRING)
     private OperationType type;
-
-    @ManyToOne
-    private BankAccount bankAccount;
 
     private String description;
 }
