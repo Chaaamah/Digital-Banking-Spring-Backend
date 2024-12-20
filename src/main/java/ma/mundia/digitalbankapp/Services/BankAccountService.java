@@ -2,7 +2,7 @@ package ma.mundia.digitalbankapp.Services;
 
 import ma.mundia.digitalbankapp.Dtos.*;
 import ma.mundia.digitalbankapp.Exceptions.BalanceNotSufficentException;
-import ma.mundia.digitalbankapp.Exceptions.BankAccountNotFountException;
+import ma.mundia.digitalbankapp.Exceptions.BankAccountNotFoundException;
 import ma.mundia.digitalbankapp.Exceptions.CustomerNotFoundException;
 
 import java.util.List;
@@ -14,11 +14,11 @@ public interface BankAccountService {
     SavingBankAccountDTO saveSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
 
     List<CustomerDTO> listCustomer();
-    BankAccountDTO getBankAccount(String accountId) throws BankAccountNotFountException;
-    void debit(String accountId, double amount, String description) throws BankAccountNotFountException, BalanceNotSufficentException;
-    void credit(String accountId, double amount, String description) throws BankAccountNotFountException, BalanceNotSufficentException;
+    BankAccountDTO getBankAccount(String accountId) throws BankAccountNotFoundException;
+    void debit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficentException;
+    void credit(String accountId, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficentException;
 
-    void transfer(String accountIdSource, String accountIdDestination, double amount) throws BalanceNotSufficentException, BankAccountNotFountException;
+    void transfer(String accountIdSource, String accountIdDestination, double amount) throws BalanceNotSufficentException, BankAccountNotFoundException;
 
     List<BankAccountDTO> bankAccountList();
 
@@ -30,5 +30,5 @@ public interface BankAccountService {
 
     List<AccountOperationDTO> accountHistory(String accountId);
 
-    AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFountException;
+    AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFoundException;
 }

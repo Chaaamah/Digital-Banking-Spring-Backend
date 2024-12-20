@@ -3,7 +3,7 @@ package ma.mundia.digitalbankapp.Web;
 import ma.mundia.digitalbankapp.Dtos.AccountHistoryDTO;
 import ma.mundia.digitalbankapp.Dtos.AccountOperationDTO;
 import ma.mundia.digitalbankapp.Dtos.BankAccountDTO;
-import ma.mundia.digitalbankapp.Exceptions.BankAccountNotFountException;
+import ma.mundia.digitalbankapp.Exceptions.BankAccountNotFoundException;
 import ma.mundia.digitalbankapp.Services.BankAccountService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +21,7 @@ public class BankAccountRestAPI {
     }
 
     @GetMapping("/accounts/{accountId}")
-    public BankAccountDTO getBankAccount(String accountId) throws BankAccountNotFountException {
+    public BankAccountDTO getBankAccount(@PathVariable String accountId) throws BankAccountNotFoundException {
         return bankAccountService.getBankAccount(accountId);
     }
 
@@ -39,7 +39,7 @@ public class BankAccountRestAPI {
     public AccountHistoryDTO getAccountHistory(
             @PathVariable String accountId,
             @RequestParam(name="page",defaultValue = "0") int page,
-            @RequestParam(name="size",defaultValue = "5")int size) throws BankAccountNotFountException {
+            @RequestParam(name="size",defaultValue = "5")int size) throws BankAccountNotFoundException {
         return bankAccountService.getAccountHistory(accountId,page,size);
     }
 }

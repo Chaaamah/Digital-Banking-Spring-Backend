@@ -31,6 +31,72 @@ Le backend est développé avec **Spring Boot** et se compose des éléments sui
 
 3. **Créer les interfaces JPA Repository**
    - Utilisez Spring Data JPA pour gérer les interactions avec la base de données.
+   - <h1>Base de donnees H2</h1>
+
+   - <h2>Strategie SINGLE TABLE</h2>
+
+   - <h3>Tables créés</h3>
+
+   - <img src="Captures/img_3.png">
+
+   - <h3>Table Customer</h3>
+
+   - <img src="Captures/img.png">
+
+   - <h3>Table Bank_Account</h3>
+
+   - <img src="Captures/img_1.png">
+
+   - <h3>Table Account_Operation</h3>
+
+   - <img src="Captures/img_2.png">
+
+   - <h2>Strategie TABLE PER CLASS</h2>
+
+   - <h3>Tables créés</h3>
+
+   - <img src="Captures/img_7.png">
+
+   - <h3>Table Current Account</h3>
+
+   - <img src="Captures/img_5.png">
+
+   - <h3>Table Saving Account</h3>
+
+   - <img src="Captures/img_6.png">
+
+   - <h2>Strategie JOINED</h2>
+
+   - <h3>Tables créés</h3>
+
+   - <img src="Captures/img_4.png">
+
+   - <h3>Table Bank_Account</h3>
+
+   - <img src="Captures/img_8.png">
+
+   - <h3>Table Current Account</h3>
+
+   - <img src="Captures/img_9.png">
+
+   - <h3>Table Saving Account</h3>
+
+   - <img src="Captures/img_10.png">
+
+   - <h1>Base de donnees MySql</h1>
+
+   - <h2>Affichage des operations</h2>
+
+   - <img src="Captures/img_11.png">
+   
+   - <h2>Consultation de la liste des comptes</h2>
+   - <img src="Captures/img_14.png">
+   - <h2>Consultation d'un compte</h2>
+   - <img src="Captures/img_17.png">
+   - <h2>Consultation des opérations d'un compte</h2>
+   - <img src="Captures/img_16.png">
+   - <h2>Pagination</h2>
+   - <img src="Captures/img_15.png">
 
 4. **Tester la couche DAO**
    - Vérifiez les fonctionnalités de base (CRUD) sur les entités à l'aide de tests unitaires ou d'intégration.
@@ -44,10 +110,11 @@ Le backend est développé avec **Spring Boot** et se compose des éléments sui
 
 7. **Tester les web services RESTful**
    - Utilisez des outils comme Postman ou Swagger UI pour tester les API REST.
+   - <img src="Captures/img_13.png">
 
 ### Documentation des API avec Swagger
 
-Pour intégrer Swagger dans votre projet Spring Boot (version 3), ajoutez la dépendance suivante dans votre fichier `pom.xml` :
+Pour intégrer Swagger dans le projet Spring Boot (version 3), ajoutez la dépendance suivante dans le fichier `pom.xml` :
 
 ```xml
 <dependency> 
@@ -56,15 +123,6 @@ Pour intégrer Swagger dans votre projet Spring Boot (version 3), ajoutez la dé
    <version>2.1.0</version> 
 </dependency>
 ```
----
-
-## Support Vidéo
-
-Pour vous guider dans le développement, vous pouvez consulter les vidéos suivantes :
-
-- [Créer un projet Spring Boot avec entités JPA et DAO](https://www.youtube.com/watch?v=muuFQWnCQd0&authuser=0)
-- [Créer des services, DTOs et RestControllers](https://www.youtube.com/watch?v=PTI8cniOXLc)
-
 ---
 
 ## Pré-requis
@@ -81,8 +139,8 @@ Pour vous guider dans le développement, vous pouvez consulter les vidéos suiva
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-projet.git
-   cd votre-projet
+   git clone https://github.com/Chaaamah/Digital-Banking-Spring-Backend.git
+   cd Digital-Banking-Spring-Backend
    ```
 
 2. Installez les dépendances :
@@ -102,25 +160,5 @@ Pour vous guider dans le développement, vous pouvez consulter les vidéos suiva
 
 ---
 
-## Contribution
 
-1. Forkez le projet.
-2. Créez une branche feature :
-   ```bash
-   git checkout -b feature/nom-de-votre-feature
-   ```
-3. Effectuez vos modifications et committez :
-   ```bash
-   git commit -m "Ajout de la feature XYZ"
-   ```
-4. Poussez vos changements :
-   ```bash
-   git push origin feature/nom-de-votre-feature
-   ```
-5. Créez une Pull Request.
 
----
-
-## Licence
-
-Ce projet est sous licence [MIT](LICENSE).
