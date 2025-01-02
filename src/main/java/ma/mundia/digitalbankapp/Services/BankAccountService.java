@@ -33,4 +33,6 @@ public interface BankAccountService {
     AccountHistoryDTO getAccountHistory(String accountId, int page, int size) throws BankAccountNotFoundException;
 
     List<CustomerDTO> searchCustomers(String keyword);
+
+    void transfer(String accountIdSource, String accountIdDestination, double amount, String description) throws BankAccountNotFoundException, BalanceNotSufficentException;
 }
